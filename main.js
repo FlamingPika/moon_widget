@@ -182,19 +182,34 @@ const getLunarPhase = (date) => {
 }
 
 function showMoonDescription(phase, date) {
+  const today = new Date(Date.now());
   let processed_date = new Date(date);
   switch (phase) {
     case 0: 
       phase = "yesterday";
       processed_date.setDate(date.getDate() - 1);
+      if (processed_date.toDateString() === today.toDateString())
+        document.getElementById("today-left").style.visibility = "visible"
+      else
+        document.getElementById("today-left").style.visibility = "hidden"
       break;
     case 1:
       phase = "today";
       processed_date.setDate(date.getDate());
+      console.log(processed_date.toDateString())
+      console.log(today.toDateString())
+      if (processed_date.toDateString() === today.toDateString())
+        document.getElementById("today-middle").style.visibility = "visible"
+      else
+        document.getElementById("today-middle").style.visibility = "hidden"
       break;
     case 2:
       phase = "tomorrow"
       processed_date.setDate(date.getDate() + 1);
+      if (processed_date.toDateString() === today.toDateString())
+        document.getElementById("today-right").style.visibility = "visible"
+      else
+        document.getElementById("today-right").style.visibility = "hidden"
       break;
   }
 
@@ -228,10 +243,13 @@ const prev = () => {
 }
 
 function refresh_description() {
+
+  // To show zodiac
   document.getElementById("current_date").innerHTML = days[selected_date.getDay()] + ', ' + selected_date.getDate() + ' ' + monthNames[selected_date.getMonth()] + ' ' + selected_date.getFullYear();
   let zodiac = getZodiac(selected_date);
   document.getElementById("zodiac").innerHTML = zodiac;
   document.getElementById("info-text").innerHTML = zodiacData[zodiac];
+
   showMoonDescription(0, selected_date);
   showMoonDescription(1, selected_date);
   showMoonDescription(2, selected_date);
@@ -327,6 +345,7 @@ function toggle_moon_animation() {
 }
 
 window.onload = function() {
+
   refresh_description();
 
   toggle_moon_animation();

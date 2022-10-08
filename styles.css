@@ -52,6 +52,7 @@ table {
 
 .inner-container {
     position: relative;
+    bottom: 40px;
 }
 
 .main-container {
@@ -67,6 +68,10 @@ table {
     font-weight: bold;
     font-size: 24px;
     color: #EDD6B5;
+}
+
+.s {
+    font-size: 17px;
 }
 
 .today-moon {
@@ -122,6 +127,7 @@ table {
     width:50px;
     height: 50px;
     border-radius: 50%;
+    cursor: pointer;
 
 }
 
