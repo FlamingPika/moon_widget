@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <link href='https://fonts.googleapis.com/css?family=Oranienbaum' rel='stylesheet'>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="canvas">
+    <div class="stars"></div>
+    <div class="stars"></div>
+    <div class="stars"></div>
+    <div class="stars"></div>
+    <div class="stars"></div>
+    <div class="stars"></div>
+    <div class="stars"></div>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <div class="arrow" onclick="prev()">
+              <div style="transform: rotate(-45deg); left: 16px;"></div>
+            </div>
+          </td>
+          <td class="col">
+            <div class="container">
+              <div class="inner-container">
+                <div class="not-today-moon" id="yesterday-moon">
+                  <div class="not-today-moon-shadow" id="yesterday-moon-shadow">
+
+                  </div>
+                </div>
+                <p id="yesterday" class="title sub"> some </p>
+                <p id="yesterday-date" style="color: white;"> text </p>
+              </div>
+            </div>
+          </td>
+          <td class="main">
+            <div class="main-container">
+              <p class="today-text"> TODAY </p>
+              <div class="today-moon" id="today-moon">
+                <div class="today-moon-shadow" id="today-moon-shadow">
+
+                </div>
+              </div>
+
+              <p id="today" class="title"> some </p>
+              <p id="today-date" style="color: white;"> text </p>
+            </div>
+          </td>
+          <td class="col">
+            <div class="container">
+              <div class="inner-container">
+                <div class="not-today-moon" id="tomorrow-moon">
+                  <div class="not-today-moon-shadow" id="tomorrow-moon-shadow">
+
+                  </div>
+                </div>
+                <p id="tomorrow" class="title sub"> some </p>
+                <p id="tomorrow-date" style="color: white;"> text </p>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="arrow" onclick="next()">
+              <div style="transform: rotate(135deg);"></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="info">
+      <tbody>
+        <tr>
+          <td>
+            <p class="title title-info" id="current_date"> Monday, 12 September 2022</p>
+            <p class="title"> Zodiac: <span id="zodiac">Scorpio</span></p>
+            <p class="info-text" id="info-text"> Moon in Scorpio creates the need to delve into your feelings as deep as possible. You
+              desire meaningful emotional exchanges now more than at any other time even if it is not easy and you are
+              forced to change many things. Shallow relationships do not satisfy you, because they are not purifying
+              enough.</p>
+          </td>
+        </tr>
+      </tbody>
+  </div>
+  </div>
+
+</body>
+
+<script src="main.js"></script>
+
+</html>
