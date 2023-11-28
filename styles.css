@@ -293,24 +293,13 @@ table {
     }
 }
 
-.moon_widget{
+.moon_widget {
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
 }
 
 @media(max-width: 1440px) {
-    .moon_widget .col {
-        width: 10px;
-        margin-bottom: -650px;
-    }
-
-    .moon_widget .container {
-        margin-left: -45px;
-    }
-}
-
-@media(max-width: 992px) {
     .moon_widget {
         max-width: 100%;
         text-align: center;
@@ -319,14 +308,37 @@ table {
 
     .moon_widget table {
         max-width: 100%;
+        
         margin: 0;
     }
-    
+
     .moon_widget table.moons {
-        height: 650px;
+        height: 390px;
+        display: table;
+        width: 100%;
     }
 
-    .moons tbody tr{
+    .moons tbody tr {
         display: -webkit-inline-box;
+    }
+}
+
+
+@media(max-width: 992px) {
+    .moon_widget {
+        height: 900px;
+    }
+    .moon_widget table.moons {
+        margin-bottom: 60px;
+        height: 560px;
+    }
+
+    .moon_widget .col {
+        width: 10px;
+        margin-bottom: -650px;
+    }
+
+    .moon_widget .container {
+        margin-left: -45px;
     }
 }
